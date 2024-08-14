@@ -5,4 +5,17 @@ const getComputerChoice = function () {
   return rand;
 };
 
-console.log(getComputerChoice());
+const getHumanChoice = function () {
+  let choice = prompt("What is your choice?");
+  switch (choice) {
+    case "rock":
+    case "paper":
+    case "scissors":
+      return choice;
+      break;
+    default:
+      prompt("That's not a valid choice!");
+  }
+};
+
+console.log(getComputerChoice(), getHumanChoice());
