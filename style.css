@@ -1,0 +1,56 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  color: rgb(73, 73, 73);
+}
+
+.container {
+  margin-bottom: 30px;
+}
+
+.container button {
+  font-size: 4rem;
+  min-width: 130px;
+  margin: 0 6px;
+  padding: 0;
+  background-color: rgba(5, 85, 182, 0.834);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.container button:hover {
+  background-color: rgba(5, 85, 182, 0.634);
+}
+
+#playerChoice,
+#computerChoice {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: rgb(59, 59, 59);
+}
+
+p {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: rgb(59, 59, 59);
+}
+
+#results {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: rgb(144, 31, 31);
+  margin: 50px;
+  text-align: left;
+}
