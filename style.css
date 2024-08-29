@@ -46,11 +46,44 @@ p {
   color: rgb(59, 59, 59);
 }
 
-#results {
+.choices {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 3rem;
-  color: rgb(144, 31, 31);
+  font-size: 1.5rem;
+  color: rgb(89, 110, 228);
   margin: 50px;
+  text-align: left;
+}
+
+.result {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: rgb(228, 89, 135);
+  margin: 50px;
+  text-align: left;
+}
+
+.greenText {
+  color: rgb(43, 255, 57);
+}
+.redText {
+  color: rgb(208, 0, 69);
+}
+
+.humScore {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: rgb(117, 228, 89);
+  margin: 0px;
+  text-align: left;
+}
+.comScore {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: rgb(89, 163, 228);
+  margin: 0px;
   text-align: left;
 }

@@ -10,18 +10,6 @@ function getComputerChoice() {
   return compChoice;
 }
 
-function getHumanChoice() {
-  const humChoice = prompt("What is your Choice?");
-
-  if (
-    humChoice === "rock" ||
-    humChoice === "paper" ||
-    humChoice === "scissors"
-  ) {
-    return humChoice;
-  } else return "That's not a valid Choice!";
-}
-
 function playRound(humanChoice, computerChoice) {
   let result = "";
 
@@ -32,24 +20,56 @@ function playRound(humanChoice, computerChoice) {
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
-    result = `YOU WIN! ${humanChoice} beats ${computerChoice}`;
+    result = `YOU WIN!  ${humanChoice} beats ${computerChoice}`;
     humanScore++;
   } else {
-    result = `YOU LOST! ${computerChoice} beats ${humanChoice}`;
+    result = `YOU LOST!  ${computerChoice} beats ${humanChoice}`;
     computerScore++;
   }
   return result;
 }
 
-function playGame() {
-  for (let i = 0; i < 2; i++) {
-    const humanSelection = getHumanChoice();
+const btn = document.querySelectorAll("button");
+btn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const humanSelection = btn.className;
+
     const computerSelection = getComputerChoice();
-    console.log(`Human: ${humanSelection}, Computer: ${computerSelection}`);
-    console.log(playRound(humanSelection, computerSelection));
+    // console.log(`Human: ${humanSelection}, Computer: ${computerSelection}`);
+    //console.log(playRound(humanSelection, computerSelection));
+    //console.log(humanScore, computerScore);
+    sel.textContent = `Player: ${humanSelection}, Computer: ${computerSelection} `;
+    res.textContent = `${playRound(humanSelection, computerSelection)}`;
 
-    console.log(humanScore, computerScore);
-  }
-}
+    humScore.textContent = `PLayer Score: ${humanScore}`;
+    comScore.textContent = `Computer Score: ${computerScore}`;
 
-playGame();
+    if (humanScore === 5) {
+      res.textContent = "Congrats! You WON! ";
+      res.classList.add("greenText");
+      btn.disabled = true;
+    } else if (computerScore === 5) {
+      res.textContent = "Game Over! You LOST! ";
+      res.classList.add("redText");
+      btn.disabled = true;
+    }
+  });
+});
+
+const content = document.querySelector("#results");
+const sel = document.createElement("div");
+sel.classList.add("choices");
+
+const res = document.createElement("div");
+res.classList.add("result");
+
+const humScore = document.createElement("div");
+humScore.classList.add("humScore");
+
+const comScore = document.createElement("div");
+comScore.classList.add("comScore");
+
+content.appendChild(sel);
+content.appendChild(res);
+content.appendChild(humScore);
+content.appendChild(comScore);
